@@ -1,7 +1,10 @@
 const express = require('express');
 const SupportFunctions = require('./other');
+const greetMiddleWare = require('./greet');
 
 const app = express();
+
+app.use('./api/v1', greetMiddleWare({ greeting: 'Hello Geeting'})).listen(8080);
 
 // GET method
 app.get('/ping', (req, res, next) => {
