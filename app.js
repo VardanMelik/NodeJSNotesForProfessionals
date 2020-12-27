@@ -1,10 +1,43 @@
 const express = require('express');
+const SupportFunctions = require('./other');
 
 const app = express();
 
-app.get('/ping', (req, res) => {
+// GET method
+app.get('/ping', (req, res, next) => {
     res.send('pong');
 })
+
+// POST
+app.post('/ping', (req, res, next) => {
+    res.send('Post Method');
+})
+
+// PUT method
+app.put('/ping', (req, res, next) => {
+    res.send('Put method');
+})
+
+// Delete method
+app.delete('/ping', (req, res, next) => {
+    res.send('Delete method');
+})
+
+// Other method
+app.route('/path')
+    .get( (req, res, next) => { 
+        res.send('Path Get');
+        SupportFunctions.SupportFunctions();
+    })
+    .put( (req, res, next) => {
+        res.send('Path Put')
+    })
+    .delete( (req, res, next) => {
+        res.send('Path delete')
+    });
+
+
+
 
 app.listen(3000, () => {
     console.log('Localhost')
