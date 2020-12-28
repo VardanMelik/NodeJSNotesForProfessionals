@@ -1,6 +1,7 @@
 const express = require('express');
 const SupportFunctions = require('./other');
 const greetMiddleWare = require('./greet');
+const modulesImport = require('./modules');
 
 const app = express();
 
@@ -45,3 +46,7 @@ app.route('/path')
 app.listen(3000, () => {
     console.log('Localhost')
 })
+
+//console.log(modulesImport('Gagik'));
+
+console.log('Console: ' + modulesImport.hello());
