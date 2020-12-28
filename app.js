@@ -47,6 +47,5 @@ app.listen(3000, () => {
     console.log('Localhost')
 })
 
-//console.log(modulesImport('Gagik'));
 
-console.log('Console: ' + modulesImport.hello());
+modulesImport.Hello('Nodejs');

@@ -1,12 +1,7 @@
-module.exports = (title) => {
-    const country = 'Armenia';
-    const company = 'Eyemotion';
-    const backend = 'Nodejs';
-    console.log('Module: ' + title);
-};
+Hello = (subject) => {
+    console.log('Hello Function: ' + subject);
+}
 
 module.exports = {
-    hello: (subject) => {
-        console.log('Hello Function' + subject);
-    } 
+    Hello: Hello
 };
