@@ -17,6 +17,11 @@ app.listen(PORT, () => {
 
     //console.log(process.channel);
     //console.log(process.argv[0]);
+    if (process.env === 'production') {
+        console.log('production');
+    } else {
+        console.log('Development');
+    }
     
 });
 
@@ -41,5 +46,4 @@ app.get('/', (req, res) => {
     }
     console.log('Sum is: ' + sum);
     res.send(sum);*/
-
-})
+});
